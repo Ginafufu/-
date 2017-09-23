@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>付雪婷的主页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	.scroll{float: right;}
+	#fix{width: 250px;height: 100px;position: fixed;top: 0;right: 50px;}
+	</style>
+	 <script src="move.js" type="text/javascript">
+  </script>
+  <script type="text/javascript" src="drag.js"></script>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		new Drag('look');
+	};
+	
+	</script>
+	<!--<script type="text/javascript"> 运动的悬浮框
+		window.onscroll=window.onresize=function()//随窗口大小而改变
+		{
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+        //ie,ff chrome
+        var oDiv=document.getElementById('fix');
+        oDiv.style.top=oDiv.offsetHeight+scrollTop+'px';
+		};
+	</script>
+	-->
+</head>
+<body id="all">
+<div id="home" style="font-size: 105px;">
+	我叫<a href="#look">付雪婷</a>，现在是一名的<a href="#major">信息专业</a>的学生。我喜欢<a href="#universe">宇宙</a>以及、<a href="#psycholopy">心理学</a>。我有些<a href="#enjoy">生活乐趣</a>。如果您有兴趣可以来<a href="#contact">联系</a>我。敬请骚扰。
+</div >
+<div id="fix" style="font-size: 50px;">欢迎骚扰！</div>
+
+<div id="look" style="width: 1080px;height: 400px;background: red ; margin-bottom: 5px; ">
+  <div id="back">
+  	<a href="#home" class="scroll">返回
+  </div><br>
+  这就是我
+  
+</div>
+<div id="major" style="width: 1080px;height: 400px;background: green ;margin-bottom: 5px; ">
+  专业素养
+  <div id="back">
+  	<a href="#home" class="scroll">返回
+  </div>
+</div>
+<div id="universe" style="width: 1080px;height: 400px;background: pink">
+<div id="back">
+  	<a href="#home" class="scroll">返回
+  </div>
+宇宙</div>
+<div id="psycholopy" style="width: 1080px;height: 400px;background: yellow">
+<div id="back">
+  	<a href="#home" class="scroll">返回
+  </div>
+心理学</div>
+<div id="enjoy" style="width: 1080px;height: 400px;background: #ccc">
+<div id="back">
+  	<a href="#home" class="scroll">返回
+  </div>
+生活乐趣</div>
+<div id="contact" style="width: 1080px;height: 400px;background: red">
+<div id="back">
+  	<a href="#home" class="scroll">返回
+  </div>
+联系的各种方式</div>
+</body>
+</html>
