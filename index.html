@@ -3,71 +3,97 @@
 <head>
 	<title>付雪婷的主页</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Ginafufu/homepage/master/assets/css/style.css
-">
+	<link rel="shortcut icon" href="logome.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 	<style type="text/css">
 	.scroll{float: right;}
 	#fix{width: 250px;height: 100px;position: fixed;top: 0;right: 50px;}
 	</style>
-	 <script src="move.js" type="text/javascript">
-  </script>
   <script type="text/javascript" src="drag.js"></script>
+   <script type="text/javascript" src="move.js"></script>
 	<script type="text/javascript">
 	window.onload=function()
 	{
 		new Drag('look');
 	};
-	
 	</script>
-	<!--<script type="text/javascript"> 运动的悬浮框
+	<script type="text/javascript"> //运动的悬浮框
 		window.onscroll=window.onresize=function()//随窗口大小而改变
 		{
 			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
-        //ie,ff chrome
         var oDiv=document.getElementById('fix');
         oDiv.style.top=oDiv.offsetHeight+scrollTop+'px';
 		};
 	</script>
-	-->
+	<script type="text/javascript">
+	var header = document.querySelector('header>look');
+    window.onscroll = function () {
+        header.style.top = document.body.scrollTop / 2 + "px";
+    }
+</script>
+
 </head>
 <body id="all">
-<div id="home" style="font-size: 105px;">
-	我叫<a href="#look">付雪婷</a>，现在是一名的<a href="#major">信息专业</a>的学生。我喜欢<a href="#universe">宇宙</a>以及、<a href="#psycholopy">心理学</a>。我有些<a href="#enjoy">生活乐趣</a>。如果您有兴趣可以来<a href="#contact">联系</a>我。敬请骚扰。
+<div id="home" style="font-size: 105px; text-align:center;line-height: 400px; margin-bottom: 100px;">
+	我是<a href="#look" class="">付雪婷</a>
 </div >
-<div id="fix" style="font-size: 50px;">欢迎骚扰！</div>
 
-<div id="look" style="width: 1080px;height: 400px;background: red ; margin-bottom: 5px; ">
-  <div id="back">
-  	<a href="#home" class="scroll">返回
-  </div><br>
-  这就是我
-  
+<div id="look" style="margin-top: 300px;height: 400px;" >
+  <div id="self" style="font-size: 50px;text-align:left;line-height: 50px;margin-top: 100px;margin-bottom: 200px;float: right;">
+ 现在是一名的<a href="#major">信息专业</a>的学生。<br>
+ 我喜欢<a href="#interst">宇宙及心理学</a>,我还有些<a href="#enjoy">生活乐趣</a>。<br>如果您有兴趣可以来<a href="#contact">联系</a>我。
+  </div>
+  <div id="photo" ><img src="logome.jpg"  alt="我" /></div>
 </div>
-<div id="major" style="width: 1080px;height: 400px;background: green ;margin-bottom: 5px; ">
-  专业素养
-  <div id="back">
-  	<a href="#home" class="scroll">返回
-  </div>
+
+<div id="fix" style="font-size: 50px;">请微笑！</a></div>
+
+<div id="major" style="width: 1080px;height: 400px;margin-top: 200px;margin-bottom: 5px;font-size: 30px;text-align:left;line-height: 50px; ">
+	<h1>学术展示</h1>
+	<ul>
+		<li><a href="study.html"> 管理论文</a></li>
+		<li>管理论文</li>
+		<li>管理论文</li>
+	</ul>
 </div>
-<div id="universe" style="width: 1080px;height: 400px;background: pink">
-<div id="back">
-  	<a href="#home" class="scroll">返回
-  </div>
-宇宙</div>
-<div id="psycholopy" style="width: 1080px;height: 400px;background: yellow">
-<div id="back">
-  	<a href="#home" class="scroll">返回
-  </div>
-心理学</div>
+
+
+<div id="interst" style="width: 1080px;height: 400px;background: pink">
+	<div>
+		<a href="study.html"> 宇宙见解</a>
+	</div>
+	<div>
+		看后疑惑？
+	</div>
+
+	<div>
+		<a href="study.html"> 心理学的见解</a></div>
+
+	<div>新的想法</div> 
+</div>
+
+
+
 <div id="enjoy" style="width: 1080px;height: 400px;background: #ccc">
-<div id="back">
-  	<a href="#home" class="scroll">返回
-  </div>
-生活乐趣</div>
+  <div><a href="https://www.douban.com/people/159835508/notes">旅行有趣见闻</a></div>
+  <div><a href="https://www.douban.com/people/159835508/reviews">好的书评，影评</a></div>
+  <div>滚动起来好照片</div>
+</div>
+
+
+
 <div id="contact" style="width: 1080px;height: 400px;background: red">
 <div id="back">
-  	<a href="#home" class="scroll">返回
+  	<a href="#self" class="scroll">返回
   </div>
-联系的各种方式</div>
+        <div><p style="font-size: 30px;text-align:center;line-height: 50px;">如果你想和我谈谈你的爱好，或是产生了一丝共鸣，可以在来联系我。 </p></div>
+    	<div><a href="mailto:ginafucren@gmail.com?subject=massage from Gina's pagehome.">通过邮件 </a></div>
+	     <div class="other">
+                <a href="javascript:;" target="_blank" rel="external nofollow"><i class="icon-wechat"></i></a>
+            </div>
+
+</div>
+
 </body>
 </html>
