@@ -4,19 +4,108 @@
 	<title>付雪婷的主页</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="logome.ico">
-	<link rel="stylesheet" type="text/css" href="https://github.com/Ginafufu/homepage/blob/master/assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="https://github.com/Ginafufu/homepage/blob/master/anicollection.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="drag.js"></script>
+	<script type="text/javascript" src="move.js"></script>
+
+
+
+	 <link  rel = "stylesheet"  href = "anicollection.css"> 
+	
+	<style type="text/css">
+		#look{
+  width:100%;
+  height:400px;
+  
+  
+  font-size:150%;
+}
+	</style>
 
 	<style type="text/css">
 	.scroll{float: right;}
-	#fix{width: 250px;height: 100px;position: fixed;top: 0;right: 50px;}
+	#fix{width: 250px;height: 100px;position: fixed;top: 0;right: 10px;}
 	</style>
-  <script type="text/javascript" src="drag.js"></script>
-   <script type="text/javascript" src="move.js"></script>
+
 	<script type="text/javascript">
 	window.onload=function()
 	{
 		new Drag('look');
+	};
+
+	</script>
+
+	<script type="text/javascript">
+		window.onload=function()
+	{
+		var oHome=document.getElementById('home');
+		oHome.onmouseout=function()
+		{
+		 startMove(this,'font-size',105);
+		};
+		oHome.onmouseover=function()
+		{
+		 startMove(this,'font-size',200);
+		};
+		var oMajor=document.getElementById('major');
+		oMajor.onmouseout=function()
+		{
+		 startMove(this,'height',200);
+		};
+		oMajor.onmouseover=function()
+		{
+		 startMove(this,'height',400);
+		};
+		var oInterst=document.getElementById('interst');
+		oInterst.onmouseout=function()
+		{
+		 startMove(this,'height',200);
+		};
+		oInterst.onmouseover=function()
+		{
+		 startMove(this,'height',400);
+		};
+		var oEnjoy=document.getElementById('enjoy');
+		oEnjoy.onmouseout=function()
+		{
+		 startMove(this,'height',200);
+		};
+		oEnjoy.onmouseover=function()
+		{
+		 startMove(this,'height',400);
+		};
+
+
+		function getStyle(obj,name)//选取样式表样式
+ {
+  if (obj.currentStyle)
+   {
+    return obj.currentStyle[name];
+   }
+   else
+   {
+    return getComputedStyle(obj,false)[name];
+   }
+ }
+  function startMove(obj,attr,iTarget)//运动 定时器改变
+  {
+    clearInterval(obj.timer);
+    obj.timer=setInterval(function()
+      {
+        var cur=parseInt(getStyle(obj,attr));
+        var speed=(iTarget-cur)/5;
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+        if (cur==iTarget)
+         {
+          clearInterval(obj.timer);
+         }
+         else
+         {
+          obj.style[attr]=cur+speed+'px';
+         }
+      },30);
+  }
+    
 	};
 	</script>
 	<script type="text/javascript"> //运动的悬浮框
@@ -37,30 +126,33 @@
 </head>
 <body id="all">
 <div id="home" style="font-size: 105px; text-align:center;line-height: 400px; margin-bottom: 100px;">
-	我是<a href="#look" class="">付雪婷</a>
+	我是<a href="#look" >付雪婷</a>
 </div >
 
-<div id="look" style="margin-top: 300px;height: 400px;" >
+<div id="look" style="margin-top: 300px;height: 400px;" data-anijs="if: mouseover, do: swing animated">
   <div id="self" style="font-size: 50px;text-align:left;line-height: 50px;margin-top: 100px;margin-bottom: 200px;float: right;">
- 现在是一名的<a href="#major">信息专业</a>的学生。<br>
- 我喜欢<a href="#interst">宇宙及心理学</a>,我还有些<a href="#enjoy">生活乐趣</a>。<br>如果您有兴趣可以来<a href="#contact">联系</a>我。
+     现在是一名的<a href="#major">信息专业</a>的学生。<br>
+     我喜欢<a href="#interst">宇宙及心理学</a>,我还有些<a href="#enjoy">生活中的思考</a>。<br>如果您有兴趣可以来<a href="#contact">联系</a>我。
   </div>
-  <div id="photo" ><img src="logome.jpg"  alt="我" /></div>
+  <div id="photo" ><img src="logome.jpg"  alt="我" style="width: 200px;height: 300px;" /></div>
 </div>
+  
+ <script src="anijs-min.js"></script> 
 
-<div id="fix" style="font-size: 50px;">请微笑！</a></div>
 
-<div id="major" style="width: 1080px;height: 400px;margin-top: 200px;margin-bottom: 5px;font-size: 30px;text-align:left;line-height: 50px; ">
+
+<div id="fix" style="font-size: 50px;">Hi</a></div>
+
+<div id="major" style="width: 100%px;height: 400px;margin-top: 200px;margin-bottom: 5px;font-size: 30px;text-align:left;line-height: 50px;background: #ccc ">
 	<h1>学术展示</h1>
 	<ul>
 		<li><a href="study.html"> 管理论文</a></li>
 		<li>管理论文</li>
-		<li>管理论文</li>
-	</ul>
+		
 </div>
 
 
-<div id="interst" style="width: 1080px;height: 400px;background: pink">
+<div id="interst" style="width: 100%;height: 400px;background: pink">
 	<div>
 		<a href="study.html"> 宇宙见解</a>
 	</div>
@@ -76,25 +168,23 @@
 
 
 
-<div id="enjoy" style="width: 1080px;height: 400px;background: #ccc">
-  <div><a href="https://www.douban.com/people/159835508/notes">旅行有趣见闻</a></div>
-  <div><a href="https://www.douban.com/people/159835508/reviews">好的书评，影评</a></div>
-  <div>滚动起来好照片</div>
+<div id="enjoy" style="width: 100%;height: 400px;background: #ccc">
+	  <div><a href="https://www.douban.com/people/159835508/notes" target="_black">旅行有趣见闻</a></div>
+	  <div><a href="https://www.douban.com/people/159835508/reviews" target="_black">好的书评，影评</a></div>
+	  <div>滚动起来好照片</div>
 </div>
 
-
-
-<div id="contact" style="width: 1080px;height: 400px;background: red">
-<div id="back">
-  	<a href="#self" class="scroll">返回
-  </div>
-        <div><p style="font-size: 30px;text-align:center;line-height: 50px;">如果你想和我谈谈你的爱好，或是产生了一丝共鸣，可以在来联系我。 </p></div>
-    	<div><a href="mailto:ginafucren@gmail.com?subject=massage from Gina's pagehome.">通过邮件 </a></div>
-	     <div class="other">
-                <a href="javascript:;" target="_blank" rel="external nofollow"><i class="icon-wechat"></i></a>
-            </div>
-
+<div id="contact" style="width: 100%;height: 400px;background: pink;">
+	  <div style="font-size: 20px;text-align:center margin-bottom: 30px;width: 100%;"> 
+	  	如果意犹未尽，就请速来联系！
+	  </div>
+	  <div>
+	  	<a href="mailto:ginafucren@gmail.com?subject=massage from cherie's pagehome.">通过邮件 </a>
+	  </div>
+	        <div class="other">
+	            <a href="javascript:;" target="_blank" rel="external nofollow"><i class="icon-wechat"></i></a>
+	        </div>
 </div>
-
+    	
 </body>
 </html>
